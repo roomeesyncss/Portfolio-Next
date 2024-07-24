@@ -30,7 +30,7 @@ const Input = ({
         name={name}
         value={value}
         onChange={onChange}
-        className="py-3 px-4 mt-2 rounded-lg outline-none border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+        className="w-full py-3 px-4 mt-2 rounded-lg outline-none border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
       />
     </div>
   );
@@ -63,10 +63,10 @@ export const Contact = () => {
     if (!form.phone) return toast.error("Phone number is required");
     if (!/^\d{7,13}$/.test(form.phone))
       return toast.error("Invalid phone number");
-  
+
     try {
       setLoading(true);
-  
+
       const emailData = {
         name: form.name,
         phone: form.phone,
@@ -74,16 +74,16 @@ export const Contact = () => {
         subject: form.subject,
         message: form.message,
       };
-  
+
       console.log("Sending email with the following data:", emailData);
-  
+
       const res = await emailjs.send(
         "service_zcp55js",
         "template_05mfl29",
         emailData,
         "LmK5Sb97_zRKOXeg-"
       );
-  
+
       if (res.text === "OK" && res.status === 200) {
         toast.success("Message sent successfully");
         setForm({
@@ -103,21 +103,14 @@ export const Contact = () => {
       setLoading(false);
     }
   };
-  
 
   return (
     <section
- id="contact"
-  className="container mx-auto md:px-10 px-3 min-h-[90vh] py-24 bg-bg"
-  >
-  
-  
-      <p className="text-primary text-lg uppercase tracking-widest">
-        Contact
-      </p>
-      <h3 className="text-4xl font-bold text-gray-800 mt-2">
-        Get In Touch
-      </h3>
+      id="contact"
+      className="container mx-auto md:px-10 px-3 min-h-[90vh] py-24 bg-bg"
+    >
+      <p className="text-primary text-lg uppercase tracking-widest">Contact</p>
+      <h3 className="text-4xl font-bold text-gray-800 mt-2">Get In Touch</h3>
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-5 place-items-center mt-10">
         {/* Form */}
         <form
@@ -132,13 +125,15 @@ export const Contact = () => {
               type="text"
               value={form.name}
             />
-            <Input
-              label="Phone Number"
-              name="phone"
-              onChange={handleChange}
-              type="tel"
-              value={form.phone}
-            />
+            <div className="max-sm:mt-3 w-full">
+              <Input
+                label="Phone Number"
+                name="phone"
+                onChange={handleChange}
+                type="tel"
+                value={form.phone}
+              />
+            </div>
           </div>
           <Input
             label="Email"
@@ -155,7 +150,10 @@ export const Contact = () => {
             value={form.subject}
           />
           <div className="w-full flex flex-col">
-            <label htmlFor="msg" className="text-sm font-semibold text-gray-600">
+            <label
+              htmlFor="msg"
+              className="text-sm font-semibold text-gray-600"
+            >
               Message
             </label>
             <textarea
@@ -185,26 +183,36 @@ export const Contact = () => {
             className="rounded-md w-full max-h-[350px] object-cover"
           />
           <div className="mt-6">
-            <h2 className="text-primary text-4xl font-bold">
-              Rooma Siddiqui
-            </h2>
+            <h2 className="text-primary text-4xl font-bold">Rooma Siddiqui</h2>
             <p className="mt-5 text-gray-600">
-              I am available for freelance or full-time positions. Contact me and let&apos;s talk.
+              I am available for freelance or full-time positions. Contact me
+              and let&apos;s talk.
             </p>
             <div>
-              <p className="uppercase text-lg mt-5 text-gray-700">Connect with me</p>
+              <p className="uppercase text-lg mt-5 text-gray-700">
+                Connect with me
+              </p>
               <div className="w-full mt-5 flex items-center gap-x-5">
-                <Link href="https://www.linkedin.com/in/rooma-siddiqui-aa92872a1/" className="social-icon">
+                <Link
+                  href="https://www.linkedin.com/in/rooma-siddiqui-aa92872a1/"
+                  className="social-icon"
+                >
                   <div className="p-2 shadow-md hover:shadow-lg transition-shadow duration-300 rounded-full">
                     <Linkedin className="w-6 h-6 text-gray-600" />
                   </div>
                 </Link>
-                <Link href="https://github.com/roomeesyncss" className="social-icon">
+                <Link
+                  href="https://github.com/roomeesyncss"
+                  className="social-icon"
+                >
                   <div className="p-2 shadow-md hover:shadow-lg transition-shadow duration-300 rounded-full">
                     <Github className="w-6 h-6 text-gray-600" />
                   </div>
                 </Link>
-                <Link href="mailto:roomasiddiqui2003@gmail.com" className="social-icon">
+                <Link
+                  href="mailto:roomasiddiqui2003@gmail.com"
+                  className="social-icon"
+                >
                   <div className="p-2 shadow-md hover:shadow-lg transition-shadow duration-300 rounded-full">
                     <Mail className="w-6 h-6 text-gray-600" />
                   </div>
