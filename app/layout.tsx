@@ -8,10 +8,10 @@ import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Rooma Siddiqui | ML Developer",
-  description: "",
+  title: "Rooma Siddiqui | AI/ML Enthusiast, Python Developer, Data Analyst",
+  description: "Portfolio of Rooma Siddiqui, an AI/ML enthusiast, Python developer, and data analyst.",
   authors: [{ name: "Rooma Siddiqui" }],
-  keywords: ["portfolio", "rooma siddiqui"],
+  keywords: ["portfolio", "AI enthusiast", "ML enthusiast", "Python developer", "data analyst", "Rooma Siddiqui"],
   creator: "Rooma Siddiqui",
   publisher: "Rooma Siddiqui",
   metadataBase: new URL("https://roomasiddiqui.vercel.app/"),
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Rooma Siddiqui | Portfolio",
-    description: "",
+    title: "Rooma Siddiqui | AI/ML Enthusiast, Python Developer, Data Analyst",
+    description: "Portfolio of Rooma Siddiqui, an AI/ML enthusiast, Python developer, and data analyst.",
     url: "https://roomasiddiqui.vercel.app/",
     siteName: "Rooma Siddiqui Portfolio",
     images: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: "https://roomasiddiqui.vercel.app/images/Roomi.png",
         width: 1200,
         height: 630,
-        alt: "",
+        alt: "Rooma Siddiqui",
       },
     ],
     locale: "en_US",
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "",
-    description: "",
+    title: "Rooma Siddiqui | AI/ML Enthusiast, Python Developer, Data Analyst",
+    description: "Portfolio of Rooma Siddiqui, an AI/ML enthusiast, Python developer, and data analyst.",
     creator: "@rooma_siddiqui",
     images: ["https://roomasiddiqui.vercel.app/images/Roomi.png"],
   },
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  category: "",
-  applicationName: "",
+  category: "Portfolio",
+  applicationName: "Rooma Siddiqui Portfolio",
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
   formatDetection: {
